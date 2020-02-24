@@ -10,7 +10,7 @@
 
     <groupId>com.webproject</groupId>
     <artifactId>webproject</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>webproject</name>
     <description>Demo project for Spring Boot</description>
 
@@ -93,6 +93,6 @@
     </build>
     <scm>
         <developerConnection>scm:git:git@github.com:uhsnarpgupta/webproject.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>TAG</tag>
     </scm>
 </project>
