@@ -11,7 +11,7 @@
 
     <groupId>com.uhsnarp</groupId>
     <artifactId>webproject</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
     <name>webproject</name>
     <description>Demo project for Spring Boot</description>
 
@@ -98,6 +98,6 @@
     </scm>-->
     <scm>
         <developerConnection>scm:git:https://github.com/uhsnarpgupta/webproject.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>webproject-0.0.2</tag>
     </scm>
 </project>
