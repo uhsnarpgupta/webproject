@@ -5,7 +5,7 @@
     <parent>
         <artifactId>webproject</artifactId>
         <groupId>com.uhsnarp</groupId>
-        <version>0.0.2</version>
+        <version>0.0.3-SNAPSHOT</version>
     </parent>
 
     <artifactId>web</artifactId>
@@ -21,7 +21,7 @@
         <dependency>
             <artifactId>data</artifactId>
             <groupId>com.uhsnarp</groupId>
-            <version>0.0.2</version>
+            <version>0.0.3-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
