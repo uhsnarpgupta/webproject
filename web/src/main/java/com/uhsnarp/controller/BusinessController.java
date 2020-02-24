@@ -72,7 +72,7 @@ public class BusinessController extends RequestInterceptor {
         }
 
         model.addAttribute("business", businessBOS);
-        return "index";
+        return "business/index";
     }
 
     private void getCookieDetails(Model model, HttpServletRequest request) {
@@ -87,15 +87,15 @@ public class BusinessController extends RequestInterceptor {
 
     // Single PRODUCT page
     @RequestMapping("/{businessId}")
-    public String productDetails(@PathVariable Integer productId, Model model, HttpSession httpSession, HttpServletRequest request) {
+    public String businessDetails(@PathVariable Integer businessId, Model model, HttpSession httpSession, HttpServletRequest request) {
         // Get product whose id is gifId
 
         getCookieDetails(model, request);
-        BusinessBO businessBO = businessService.findById(productId);
+        BusinessBO businessBO = businessService.findById(businessId);
 
         model.addAttribute("business", businessBO);
 
-        return "businessBO/details";
+        return "business/details";
     }
 
     // BUSINESS businessBO data
@@ -142,40 +142,40 @@ public class BusinessController extends RequestInterceptor {
         //redirectAttributes.addFlashAttribute("flash", new FlashMessage("BUSINESS successfully addded", FlashMessage.Status.SUCCESS));
 
         // Redirect browser to new BUSINESS's detail view
-        return String.format("redirect:/businessBO/%s", businessBO.getId());
+        return String.format("redirect:/business/%s", businessBO.getId());
     }
 
 
     // Form for uploading a new PRODUCT
     @RequestMapping("/addBusiness")
-    public String formNewProduct(Model model, HttpSession httpSession) {
+    public String formNewBusiness(Model model, HttpSession httpSession) {
         // Add model attributes needed for new PRODUCT upload form
         model.addAttribute("business", new BusinessBO());
         model.addAttribute("categories", categoryService.findAll());
         model.addAttribute("action", "/businessBO");
         model.addAttribute("heading", "add");
         model.addAttribute("submit", "Add");
-        return "businessBO/form";
+        return "business/form";
     }
 
     // Form for editing an existing BUSINESS
     @RequestMapping(value = "/{businessId}/edit")
-    public String formEditProduct(@PathVariable Integer productId, Model model, HttpSession httpSession) {
+    public String formEditBusiness(@PathVariable Integer businessId, Model model, HttpSession httpSession) {
         // Add model attributes needed for edit form
         if (!model.containsAttribute("businessBO")) {
-            model.addAttribute("business", businessService.findById(productId));
+            model.addAttribute("business", businessService.findById(businessId));
         }
-        model.addAttribute("action", String.format("/productBOS/%s", productId));
+        model.addAttribute("action", String.format("/productBOS/%s", businessId));
         model.addAttribute("heading", "Edit");
         model.addAttribute("submit", "Update");
         model.addAttribute("categories", categoryService.findAll());
-        return "businessBO/form";
+        return "business/form";
     }
 
     // Update an existing BUSINESS
     @RequestMapping(value = "/{businessId}", method = RequestMethod.POST)
-    public String updateProduct(@Valid BusinessBO businessBO, @RequestParam MultipartFile file,
-                                BindingResult result, RedirectAttributes redirectAttributes, HttpSession httpSession) {
+    public String updateBusiness(@Valid BusinessBO businessBO, @RequestParam MultipartFile file,
+                                 BindingResult result, RedirectAttributes redirectAttributes, HttpSession httpSession) {
         // TODO: Update BUSINESS if data is valid
         if (result.hasErrors()) {
             // Include validation errors upon redirect
@@ -198,9 +198,9 @@ public class BusinessController extends RequestInterceptor {
 
     // Delete an existing PRODUCT
     @RequestMapping(value = "/{businessId}/delete", method = RequestMethod.POST)
-    public String deleteProduct(@PathVariable Integer productId, RedirectAttributes redirectAttributes, HttpSession httpSession) {
+    public String deleteBusiness(@PathVariable Integer businessId, RedirectAttributes redirectAttributes, HttpSession httpSession) {
         // TODO: Delete the BUSINESS whose id is gifId
-        BusinessBO businessBO = businessService.findById(productId);
+        BusinessBO businessBO = businessService.findById(businessId);
 
         businessService.delete(businessBO);
         //redirectAttributes.addFlashAttribute("flash", new FlashMessage("BusinessBO deleted!", FlashMessage.Status.SUCCESS));
@@ -214,13 +214,13 @@ public class BusinessController extends RequestInterceptor {
     public String searchResults(@RequestParam String q, Model model, HttpSession httpSession) {
         // Get list of PRODUCTs whose description contains value specified by q
         List<BusinessBO> businessBOS = new ArrayList<>();
-        businessService.findAll().forEach(product -> {
-            if ((product.getName().toLowerCase()).indexOf(q.toLowerCase()) != -1) {
-                businessBOS.add(product);
+        businessService.findAll().forEach(businessBO -> {
+            if ((businessBO.getName().toLowerCase()).indexOf(q.toLowerCase()) != -1) {
+                businessBOS.add(businessBO);
             }
         });
 
         model.addAttribute("products", businessBOS);
-        return "product/index";
+        return "business/index";
     }
 }
