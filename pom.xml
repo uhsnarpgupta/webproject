@@ -92,8 +92,12 @@
                 </plugin>-->
         </plugins>
     </build>
-    <scm>
+    <!--<scm>
         <developerConnection>scm:git:git@github.com:uhsnarpgupta/webproject.git</developerConnection>
         <tag>webproject-0.0.1</tag>
+    </scm>-->
+    <scm>
+        <developerConnection>scm:git:https://github.com/uhsnarpgupta/webproject.git</developerConnection>
+        <tag>HEAD</tag>
     </scm>
 </project>
