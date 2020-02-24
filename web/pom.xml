@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.web</groupId>
     <artifactId>web</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>web</name>
     <description>Demo project for Spring Boot</description>
 
@@ -21,7 +21,7 @@
         <dependency>
             <artifactId>data</artifactId>
             <groupId>com.data</groupId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.2-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
