@@ -1,0 +1,94 @@
+<!doctype html>
+<html th:fragment="layout (template, menu)" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Modern Business - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" th:href="@{/resources/css/petclinic.css}"/>
+
+</head>
+<body>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Aligarh City</a>
+        <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler navbar-toggler-right" data-target="#navbarResponsive" data-toggle="collapse"
+                type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
+                       data-toggle="dropdown"
+                       href="#" id="navbarDropdownPortfolio">
+                        Portfolio
+                    </a>
+                    <div aria-labelledby="navbarDropdownPortfolio" class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
+                        <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
+                        <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
+                        <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
+                        <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
+                       data-toggle="dropdown"
+                       href="#" id="navbarDropdownBlog">
+                        Blog
+                    </a>
+                    <div aria-labelledby="navbarDropdownBlog" class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
+                        <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
+                        <a class="dropdown-item" href="blog-post.html">Blog Post</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
+                       data-toggle="dropdown"
+                       href="#" id="navbarDropdownBlog">
+                        Other Pages
+                    </a>
+                    <div aria-labelledby="navbarDropdownBlog" class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="full-width.html">Full Width Page</a>
+                        <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
+                        <a class="dropdown-item" href="faq.html">FAQ</a>
+                        <a class="dropdown-item" href="404.html">404</a>
+                        <a class="dropdown-item" href="pricing.html">Pricing Table</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<th:block th:include="${template}"/>
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Aligarh City 2019</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+</body>
+</html>

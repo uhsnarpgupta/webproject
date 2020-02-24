@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'userBOS')}">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Users</title>
+</head>
+<body>
+<h2 th:text="'List of Users'">Owners List</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th style="width: 150px;">Id</th>
+        <th style="width: 150px;">Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--userBO?.id here ? is a null safe operator -->
+    <!--/*@thymesVar id="userBOS" type="com.uhsnarp.model.UserBO"*/-->
+    <tr th:each="userBO:${userBOS}">
+        <td th:text="${userBO?.id}">1</td>
+        <td th:text="${userBO?.name}">Harry Potter</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
