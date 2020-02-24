@@ -24,10 +24,12 @@
         <div th:each="buss : ${business}" class="col-lg-4 col-sm-6 portfolio-item">
                     <!--/* If the business is active, this code will be rendered. */-->
 
-            <div class="card h-100" th:if="${buss.active}" style="|background-color:blue|">
-                <a th:href="${buss.youtubeLink}"><img th:alt="${buss.name}" class="card-img-top"
+            <div class="card h-100" style="|background-color:blue|">
+                <a th:href="${buss.facebookLink}">
+                    <img th:alt="${buss.name}" class="card-img-top"
                                                       src="http://placehold.it/700x400"
-                                                      th:src="@{/resources/images/700x400/locks.jpg}"></a>
+                                                      th:src="@{/resources/images/700x400/locks.jpg}">
+                </a>
                 <div class="card-body">
                     <span class="badge badge-secondary my-2">NEW</span>
                     <h4 class="card-title" th:text="${buss.name}">Hardware & Locks</h4>
@@ -40,6 +42,7 @@
             </div>
                     <!--/* If the business is inactive, this code will be rendered. */-->
 
+<!--
             <div class="card h-100" th:unless="${buss.active}" style="|background-color:red|">
                 <a th:href="${buss.youtubeLink}"><img th:alt="${buss.name}" class="card-img-top"
                                                       src="http://placehold.it/700x400"
@@ -51,9 +54,10 @@
                     <p class="card-text" th:text="${buss.tagLine}">Locks and hardware production is the cottage industry
                         here</p>
                     <a class="text-secondary" th:href="${buss.facebookLink}">More Info ></a>
-                    <!--<i class="mi mi-ChevronRight"></i>-->
+                    &lt;!&ndash;<i class="mi mi-ChevronRight"></i>&ndash;&gt;
                 </div>
             </div>
+-->
         </div>
 
     </div>

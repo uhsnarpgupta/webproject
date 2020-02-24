@@ -20,7 +20,7 @@ public class ProductBO extends BaseEntity{
     @JoinColumn(name = "business_id")
     private BusinessBO business;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
+    @OneToMany(mappedBy = "product")
     private Set<ImageBO> images = new HashSet<>();
 
     public ProductBO() {

@@ -60,7 +60,7 @@ public class BusinessController extends RequestInterceptor {
     // Home page - index of all GIFs
     @RequestMapping("")
     public String listBusiness(Model model, HttpSession httpSession, RedirectAttributes redirectAttributes, HttpServletRequest request) {
-        getCookieDetails(model, request);
+        //getCookieDetails(model, request);
         // Get all productBOS
         Set<BusinessBO> businessBOS = businessService.findAll();
 

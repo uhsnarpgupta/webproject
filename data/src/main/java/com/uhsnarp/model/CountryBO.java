@@ -10,6 +10,6 @@ import javax.persistence.Table;
 @Table(name = "country")
 public class CountryBO extends BaseEntity {
     private String name;
-    private String countryCode;
-    private String continent_name;
+    private String countrycode;
+    private String continentname;
 }

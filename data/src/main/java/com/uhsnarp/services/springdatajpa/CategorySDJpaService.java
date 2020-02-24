@@ -1,9 +1,7 @@
 package com.uhsnarp.services.springdatajpa;
 
 import com.uhsnarp.model.CategoryBO;
-import com.uhsnarp.repositories.BusinessRepository;
 import com.uhsnarp.repositories.CategoryRepository;
-import com.uhsnarp.repositories.UserRepository;
 import com.uhsnarp.services.CategoryService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -17,27 +15,22 @@ import java.util.Set;
 public class CategorySDJpaService implements CategoryService {
 
     private final CategoryRepository categoryRepository;
-    private final UserRepository userRepository;
-    private final BusinessRepository businessRepository;
 
-    public CategorySDJpaService(CategoryRepository categoryRepository, UserRepository userRepository,
-                                BusinessRepository businessRepository) {
+    public CategorySDJpaService(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
-        this.userRepository = userRepository;
-        this.businessRepository = businessRepository;
     }
 
     @Override
     public Set<CategoryBO> findAll() {
-        Set<CategoryBO> businesses = new HashSet<>();
-        categoryRepository.findAll().forEach(businesses::add);
-        return businesses;
+        Set<CategoryBO> categories = new HashSet<>();
+        categoryRepository.findAll().forEach(categories::add);
+        return categories;
     }
 
     @Override
     public CategoryBO findById(Integer id) {
-        Optional<CategoryBO> optionalBusiness = categoryRepository.findById(id);
-        return optionalBusiness.orElse(null);
+        Optional<CategoryBO> optionalCategory = categoryRepository.findById(id);
+        return optionalCategory.orElse(null);
     }
 
     @Override
